@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+
+<body bgcolor="#FFFFCC">
+    <!-- Main wrapper for the entire page -->
+    <div id="wrapper">
+        <!-- Page header containing the name -->
+        <header>
+            <h1>Arieza Aziera</h1>
+        </header>
+
+        <!-- Bar navigation -->
+        <nav>
+            <!-- Toggle button for mobile navigation -->
+            <div class="toggle-bar" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Logo linking to the home page -->
+            <div class="logo">
+                <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+            </div>
+            <!-- Navigation links -->
+            <div class="navigation-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content sections -->
+        <section>
+            <!-- Section for education information -->
+            <article>
+                <header>
+                    <h2>My Education</h2>
+                </header>
+                <div id="education">
+                    <!-- Table displaying education details -->
+                    <p></p>
+                    <table border="1" width="80%">
+                        <tr><th colspan="3">My Education List</th></tr>
+                        <tr><th>School Name</th><th>Level</th><th>Year</th></tr>
+                        <tr><td>SMK Gelang Patah</td><td>SPM</td><td>2018</td></tr>
+                        <tr><td>SMK Gelang Patah</td><td>STPM</td><td>2021</td></tr>
+                        <tr>
+                            <!-- Link to the university's website opened in a new tab -->
+                            <td><a href="http://www.utem.edu.my" target="_blank">Universiti Teknikal Malaysia Melaka</a></td>
+                            <td>Bachelor Degree</td><td>2021-current</td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </section>
+
+        <!-- Page footer -->
+        <footer>
+            <hr/>
+            <!-- Social media links -->
+            <div class="social-links-container">
+                <a href="https://www.facebook.com/nurarieza.nurarieza"><img src="img/fb.png" alt="Facebook" class="social-links" id="facebook" height="100" width="100"></a>
+                <a href="https://twitter.com/ferdexzra"><img src="img/twit.png" alt="Twitter" class="social-links" id="twitter" height="100" width="100"></a>
+                <a href="https://instagram.com/ariezaaziera"><img src="img/insta.png" alt="Instagram" class="social-links" id="instagram" height="100" width="100"></a>
+                <a href="https://www.youtube.com/@ariezaaziera244"><img src="img/you.png" alt="Youtube" class="social-links" id="youtube" height="100" width="100"></a>
+            </div>
+            <!-- Copyright information -->
+            <h5>Copyright &copy; Arieza Aziera | 2023</h5>
+        </footer>
+    </div>
+
+    <!-- jQuery library for JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- JavaScript for toggling navigation menu -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navigation-bar ul');
+            nav.classList.toggle('show');
+        }
+
+        $('.toggle-bar').on('click', function (event) {
+            $('this').toggleClass('open');
+            $('.navigation-bar').slideToggle('200');
+        });
+    </script>
+</body>
+</html>

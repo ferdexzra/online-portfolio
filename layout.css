@@ -1,0 +1,728 @@
+/* General Styles */
+@font-face {
+  font-family: 'PoiretOneRegular';
+  src: url('fonts/PoiretOne-Regular.ttf') format('truetype'); /* Adjust the path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ManropeVariableFontwght';
+  src: url('fonts/Manrope-VariableFont_wght.ttf') format('truetype'); /* Adjust the path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'ManropeVariableFontwght', 'sans-serif';
+  background-image: url('img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+#wrapper {
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Header Styles */
+header {
+  color: #f7d7d7;
+  padding: 15px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'PoiretOneRegular', sans-serif;
+  margin: 0;
+  font-size: 64px;
+  letter-spacing: 20px;
+  padding: 20px;
+  padding-top: 40px;
+  background: linear-gradient(to right, black, #cccccc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2, h3, h5 {
+  background-color: rgb(37, 37, 37);
+  padding: 20px;
+  font-size: 18px;
+  color: #c79d9d;
+}
+
+h4 {
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* Navigation Styles */
+.logo {
+  display: none;
+}
+
+nav {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.navigation-bar {
+  display: inline-block;
+  text-align: right;
+}
+
+.navigation-bar ul {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(37, 37, 37);
+}
+
+.navigation-bar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 20px 25px;
+}
+
+.navigation-bar ul li a {
+  text-decoration: none;
+  color: #c79d9d;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: all 0.3s;
+  padding: 20px;
+}
+
+.navigation-bar ul li a:hover {
+  color: black;
+  background-color: #c79d9d;
+}
+
+a.btn-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 25px;
+  background: #292423;
+  width: 130px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-top: 35px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  text-decoration: none;
+  margin-left: auto;
+}
+
+a.btn-main:hover {
+  background: #fff;
+  color: #292423;
+}
+
+a.btn-main span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: #35343d;
+  border-radius: 50px;
+  margin: 0 0 0 12px;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+a.btn-main span img {
+  margin: 0 0 4px 0;
+}
+
+a.btn-main:hover span {
+  background: #ccc;
+}
+
+#navigation-portfolio {
+  display: inline-block;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+#navigation-portfolio a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: all 0.3s;
+}
+
+#navigation-portfolio a:hover {
+  color: #c79d9d;
+  opacity: 0.5;
+}
+
+#nav-skills {
+  padding: 0;
+}
+
+/* Section Styles */
+section {
+  padding: 20px;
+  padding-top: 0;
+  text-align: center;
+}
+
+/* Image and Video Styles */
+img, video {
+  max-width: 100%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  height: auto;
+}
+
+#main-profile {
+  float: left;
+  filter: drop-shadow(20px 0 5px rgba(0, 0, 0, 0.5));
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 50%;
+  height: auto;
+  margin-right: 60px;
+}
+
+#profile {
+  float: left;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+/* Clear the float to prevent layout issues */
+#main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Adjusted styles for the text next to the image */
+#main {
+  padding: 20px;
+  margin: 20px;
+}
+
+#main p {
+  margin: 10;
+  text-align: right;
+  line-height: 1.5;
+}
+
+#main-Hi {
+  font-size: 20px;
+  margin: 0;
+  margin-right: 15px;
+}
+
+#me-A {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: right;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.posters-container, .video-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.poster-item, .video-item {
+  text-align: center;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+.poster-label, .video-label {
+  margin: 0;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+
+/* Social Links Styles */
+.social-links-container {
+  text-align: center;
+  padding: 10px;
+}
+
+.social-links {
+  margin: 10px;
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+  padding: 5px;
+  height: 60px;
+  width: 60px;
+}
+
+.social-links:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#contact-table {
+  display: flex;
+  flex-direction: column; /* Display table as a column */
+  align-items: center; /* Center the table horizontally */
+  margin: 20px auto; /* Add margin for spacing */
+  border-collapse: collapse; /* Collapse borders for a cleaner look */
+  border-radius: 8px; /* Add rounded corners */
+  overflow: hidden; /* Hide overflow to prevent shadow from being cut off */
+}
+
+#contact-table td, th {
+  padding: 2px;
+  border: transparent; /* Add border to cells */
+  text-align: left;
+}
+
+#contact-table th {
+  background-color: #f2f2f2; /* Light background color for header */
+}
+
+.selectors {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+/* Style the inputs and labels */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+textarea,
+label,
+select {
+  margin: 5px 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Style the radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Style the select element */
+select {
+  padding: 10px;
+  font-size: 16px;
+  background-color: black;
+  color: #c79d9d;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Style the options inside the select */
+select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Hover effect for options */
+select option:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style the select when an option is selected */
+select:active,
+select:checked {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+/* Style the buttons */
+button {
+  background-color: black;
+  color: #c79d9d;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: white; /* Darker green on hover */
+  color: #000;
+}
+
+#result {
+  margin-top: 20px;
+}
+
+#personal-info table {
+  border: transparent;
+  text-align: left;
+  margin: auto;
+}
+
+#personal-info th, #personal-info td {
+  text-align: left;
+}
+
+#personal-info td {
+  padding-left: 20px;
+}
+
+#personal-info p {
+  text-align: center;
+}
+
+#education table {
+  text-align: center;
+  margin: auto;
+  width: 80%; /* Add this line to control the width of the table */
+  border-collapse: unset; /* Add this line to collapse table borders */
+}
+
+#education th, #education td {
+  text-align: center;
+  border: 1px solid black; /* Add this line to set border for th and td */
+  padding: 8px; /* Add this line to provide padding inside th and td */
+}
+
+#resultTable {
+  margin: auto; /* Adjust the margin as needed */
+  border-collapse: unset; /* Optional: to collapse the borders */
+  border: 1px solid black;
+  width: 80%; /* Optional: set the width of the table */
+}
+
+#resultTable td, #resultTable th {
+  padding: 8px; /* Optional: set padding for table cells */
+  border: 1px solid black; /* Optional: border style */
+  text-align: left; /* Optional: text alignment */
+}
+
+/* Add this to your existing styles or in a style tag in your HTML file */
+
+a[href="#top"] {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #292423;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+a[href="#top"]:hover {
+  background-color: #555;
+}
+
+ol {
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+  padding: 20px;
+  margin:20px;
+  margin-top: 0;
+}
+
+li {
+  margin-bottom: 10px; /* Adjust the spacing between list items */
+}
+
+ul {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  header {
+    padding: 0.1px;
+    margin: 0;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  header h2 {
+    font-size: 18px;
+  }
+
+  h3 h4 {
+    padding: 0 20px;
+  }
+
+  h2, h3, h4, h5 {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .logo {
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    padding-top: 20px;
+    padding-right: 20px;
+  }
+
+  .logo img {
+    max-width: 50px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    box-shadow: none;
+  }
+
+  .logo:hover img {
+    transform: scale(1.1);
+  }
+
+  #wrapper {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  div #main {
+    font-size: smaller;
+  }
+
+  /* Toggle bar */
+  .toggle-bar {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    cursor: pointer;
+    padding: 10px;
+    padding-top: 20px;
+  }
+
+  .toggle-bar span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 4px;
+  }
+
+  nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation-bar {
+    display: none;
+    top: 80px;
+  }
+
+  .navigation-bar {
+    position: absolute;
+    top: 90px;
+    width: 90%;
+    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .navigation-bar ul {
+    padding: 10px 0 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+  }
+
+  .navigation-bar ul li {
+    padding: 10px 30px;
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  .navigation-bar ul li:hover {
+    background-color: #333;
+  }
+
+  .navigation-bar ul li a {
+    color: #000000;
+  }
+
+  .navigation-bar ul li a:hover {
+    color: #c79d9d;
+    background-color: transparent;
+  }
+
+  #nav-skills {
+    font-size: smaller;
+  }
+
+  #section-skills {
+    padding-top: 1opx;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  #navigation-portfolio {
+    margin: auto;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 20px;
+    padding-top: 0;
+    text-align: center;
+  }
+
+  #main-profile, #profile {
+    margin: 0 auto; /* Set left and right margin to auto */
+    display: block; /* Ensure it's a block-level element */
+    float: none; /* Remove the float property */
+  }
+
+  #main-profile {
+    filter: drop-shadow(20px 0 5px rgba(0, 0, 0, 0.5));
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 50%;
+    height: auto;
+  }
+
+  #profile {
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  /* Clear the float to prevent layout issues */
+  #main::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Adjusted styles for the text next to the image */
+  #main {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  #main p {
+    margin: 10;
+    text-align: center; /* Center the text */
+    text-align: justify;
+  }
+
+  #main-Hi {
+    font-size: 14px;
+    padding-top: 40px;
+  }
+  
+  #me-A {
+    font-size: 30px;
+  }
+
+  #personal-info p {
+    text-align: center;
+  }
+
+  a.btn-main {
+    margin-left: 0;
+  }
+
+  .posters-container, .video-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poster-item, .video-item {
+    margin-bottom: 20px; /* Adjust the spacing between posters and videos */
+  }
+
+  .poster-label, .video-label {
+    margin-top: 1px; /* Adjust the spacing between poster and label */
+  }
+
+  select {
+    font-size: 14px;
+  }
+
+  ol {
+    font-size: 16px;
+  }
+
+  ul {
+    font-size: 14px;
+  }
+
+  /* Social Links Styles */
+  .social-links-container {
+    padding: 0px;
+  }
+
+  .social-links {
+    height: 30px;
+    width: 30px;
+  }
+
+  .social-links:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 1px 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navigation-bar {
+    display: block !important;
+  }
+}

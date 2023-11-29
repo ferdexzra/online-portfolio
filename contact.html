@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="layout.css">
+    </head>
+    <body bgcolor="#FFFFCC">
+        <div id="wrapper">
+            <header>
+                <h1>Arieza Aziera</h1>
+            </header>
+
+            <aside>
+                <nav>
+                    <div class="toggle-bar" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="logo">
+                        <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                    </div>
+                    <div class="navigation-bar">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="education.html">Education</a></li>
+                            <li><a href="skills.html">Skills</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="contact.html">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <section>
+                <article>
+                    <header>
+                        <h2>Contact Me</h2>
+                        <h3>Please add your contact details here.</h3>
+                    </header>
+                    <table id="contact-table">
+                        <tr>
+                            <td colspan="2">
+                                <div class="selectors">
+                                    <select name="background" id="background" onchange="changeBackground()">
+                                        <option value="" disabled selected>Change Background</option>
+                                        <option value="url('img/bg.jpg')">Pink</option>
+                                        <option value="url('img/black.jpg')">Black</option>
+                                        <option value="url('img/yellow.jpg')">Yellow</option>
+                                        <option value="url('img/blue.jpg')">Blue</option>
+                                        <option value="url('img/beige.jpg')">Beige</option>
+                                        <option value="url('img/purple.jpg')">Purple</option>
+                                        <option value="url('img/brown.jpg')">Brown</option>
+                                    </select>
+                                    
+                                    <select name="siteselector" size="1" onchange="site(this.value)">
+                                        <option value="" disabled selected>Website</option>
+                                        <option value="http://www.utem.edu.my">UTeM</option>
+                                        <option value="http://ftmk.utem.edu.my">FTMK</option>
+                                        <option value="http://ulearn.utem.edu.my">ULearn</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <tr>
+                                <td>First Name:</td>
+                                <td>
+                                    <label>
+                                        <input type="text" name="firstName" id="firstName" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:</td>
+                                <td>
+                                    <label>
+                                        <input type="text" name="lastName" id="lastName" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Age:</td>
+                                <td>
+                                    <label>
+                                        <input type="number" name="age" id="age" min="18" max="50" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Address:</td>
+                                <td>
+                                    <label>
+                                        <input type="text" name="address" id="address" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Gender:</td>
+                                <td>
+                                    <label for="male">
+                                        <input type="radio" id="male" name="gender" value="male"> Male
+                                    </label>
+                                    <label for="female">
+                                        <input type="radio" id="female" name="gender" value="female"> Female
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td>
+                                    <label for="email">
+                                        <input type="email" id="email" name="email" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Mobile Number:</td>
+                                <td>
+                                    <label>
+                                        <input type="tel" name="mobileNumber" id="mobileNumber" />
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Preferred Method of Contact:</td>
+                                <td>
+                                    <label for="contactPhone">
+                                        <input type="checkbox" name="contactMethod" id="contactPhone" value="phone"> Phone
+                                    </label>
+                                    <label for="contactMail">
+                                        <input type="checkbox" name="contactMethod" id="contactMail" value="mail"> Mail
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Comments:</td>
+                                <td>
+                                    <label for="comments">
+                                        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>My Favorite Site:</td>
+                                <td>
+                                    <label for="favoriteSiteUTeM">
+                                        <input type="checkbox" name="favoriteSite" id="favoriteSiteUTeM" value="http://www.utem.edu.my">UTeM Page
+                                    </label>
+                                    <br />
+                                    <label for="favoriteSiteFacebook">
+                                        <input type="checkbox" name="favoriteSite" id="favoriteSiteFacebook" value="https://www.facebook.com/">Facebook Page
+                                    </label>
+                                    <br />
+                                    <label for="favoriteSiteGoogle">
+                                        <input type="checkbox" name="favoriteSite" id="favoriteSiteGoogle" value="https://www.google.com/">Google Page
+                                    </label>
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
+                    
+                    <div id="result"></div>
+                    
+                    <button onclick="process()">Process</button>
+                    <button onclick="clearForm()">Clear</button>
+                    
+                    <script>
+                        // Add a global variable to track form submission
+                        var formProcessed = false;
+
+                        // Add event listener for beforeunload
+                        window.addEventListener("beforeunload", function (e) {
+                            if (!formProcessed && isFormIncomplete()) {
+                                var confirmationMessage = "Your visit might not be documented. Are you sure to leave?";
+                                (e || window.event).returnValue = confirmationMessage; // Standard for most browsers
+                                return confirmationMessage; // For some older browsers
+                            }
+                        });
+
+                        // Function to check if the form is incomplete
+                        function isFormIncomplete() {
+                            // Check if required fields are empty
+                            return (
+                                document.getElementById("firstName").value === "" ||
+                                document.getElementById("lastName").value === "" ||
+                                document.getElementById("email").value === "" ||
+                                document.getElementById("mobileNumber").value === ""
+                            );
+                        }
+
+                        function changeBackground() {
+                            var selectedBackground = document.getElementById("background").value;
+                            document.body.style.backgroundImage = selectedBackground;
+                        }
+                    
+                        function site(val) {
+                            location.href = val;
+                        }
+                    
+                        function process() {
+                            // Check if required fields are empty
+                            if (isFormIncomplete()) {
+                                alert("Please fill in all the required fields (First Name, Last Name, Email, Mobile Number).");
+                                return; // Stop processing if required fields are empty
+                            }
+
+                            // Your existing processing logic...
+                            var firstName = document.getElementById("firstName").value;
+                            var lastName = document.getElementById("lastName").value;
+                            var age = document.getElementById("age").value;
+                            var address = document.getElementById("address").value;
+                            var gender = document.querySelector('input[name="gender"]:checked');
+                            var email = document.getElementById("email").value;
+                            var mobileNumber = document.getElementById("mobileNumber").value;
+                            var contactMethods = document.querySelectorAll('input[name="contactMethod"]:checked');
+                            var comments = document.getElementById("comments").value;
+                            var favoriteSites = document.querySelectorAll('input[name="favoriteSite"]:checked');
+
+                            // Display the result in the form of a table
+                            var result = "<h2>User Information:</h2>";
+                            var currentDate = new Date().toLocaleString();
+
+                            result += "<table id='resultTable', border='1'>";
+                            result += "<tr><td>Date</td><td>" + currentDate + "</td></tr>";
+                            result += "<tr><td>First Name</td><td>" + firstName + "</td></tr>";
+                            result += "<tr><td>Last Name</td><td>" + lastName + "</td></tr>";
+                            result += "<tr><td>Age</td><td>" + age + "</td></tr>";
+                            result += "<tr><td>Address</td><td>" + address + "</td></tr>";
+                            result += "<tr><td>Gender</td><td>" + (gender ? gender.value : "Not specified") + "</td></tr>";
+                            result += "<tr><td>Email</td><td>" + email + "</td></tr>";
+                            result += "<tr><td>Mobile Number</td><td>" + mobileNumber + "</td></tr>";
+
+                            result += "<tr><td>Contact Methods</td><td>";
+                            contactMethods.forEach(function (method) {
+                                result += method.value + "<br>";
+                            });
+                            result += "</td></tr>";
+
+                            result += "<tr><td>Comments</td><td>" + comments + "</td></tr>";
+
+                            result += "<tr><td>Favorite Sites</td><td>";
+                            favoriteSites.forEach(function (site) {
+                                result += site.value + "<br>";
+                            });
+                            result += "</td></tr>";
+
+                            result += "</table>";
+
+                            result += "<p></p>";
+
+                            document.getElementById("result").innerHTML = result;
+
+                            // Set the formProcessed flag to true upon successful processing
+                            formProcessed = true;
+                        }
+
+                    
+                        function clearForm() {
+                            var inputs = document.getElementsByTagName("input");
+                            var textareas = document.getElementsByTagName("textarea");
+                    
+                            for (var i = 0; i < inputs.length; i++) {
+                                if (inputs[i].type === "text" || inputs[i].type === "email" || inputs[i].type === "number" || inputs[i].type === "tel" || inputs[i].type === "radio" || inputs[i].type === "checkbox") {
+                                    inputs[i].value = "";
+                                    if (inputs[i].type === "radio" || inputs[i].type === "checkbox") {
+                                        inputs[i].checked = false;
+                                    }
+                                }
+                            }
+                    
+                            for (var i = 0; i < textareas.length; i++) {
+                                textareas[i].value = "";
+                            }
+                    
+                            document.getElementById("result").innerHTML = "";
+
+                            formProcessed = false;
+                        }
+                    </script>
+                </article>
+            </section>
+
+            <footer>
+                <hr/>
+                <div class="social-links-container">
+                    <a href="https://www.facebook.com/nurarieza.nurarieza"><img src="img/fb.png" alt="Facebook" class="social-links" id="facebook" height="100" width="100"></a>
+                    <a href="https://twitter.com/ferdexzra"><img src="img/twit.png" alt="Twitter" class="social-links" id="twitter" height="100" width="100"></a>
+                    <a href="https://instagram.com/ariezaaziera"><img src="img/insta.png" alt="Instagram" class="social-links" id="instagram" height="100" width="100"></a>
+                    <a href="https://www.youtube.com/@ariezaaziera244"><img src="img/you.png" alt="Youtube" class="social-links" id="youtube" height="100" width="100"></a>
+                </div>
+                <h5>Copyright &copy; Arieza Aziera | 2023</h5>
+            </footer>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            // Add this script for form handling
+        var formProcessed = false;
+
+        window.addEventListener("beforeunload", function (e) {
+            if (!formProcessed && isFormIncomplete()) {
+                var confirmationMessage = "Your visit might not be documented. Are you sure to leave?";
+                (e || window.event).returnValue = confirmationMessage; // Standard for most browsers
+                return confirmationMessage; // For some older browsers
+            }
+        });
+
+        function toggleMenu() {
+            const nav = document.querySelector('.navigation-bar ul');
+            nav.classList.toggle('show');
+        }
+
+        $('.toggle-bar').on('click', function (event) {
+            $('this').toggleClass('open');
+            $('.navigation-bar').slideToggle('200');
+        });
+        </script>
+    </body>
+</html>

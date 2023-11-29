@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Portfolio</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+
+<body bgcolor="#FFFFCC">
+    <!-- Main wrapper for the entire page -->
+    <div id="wrapper">
+        <!-- Page header containing the name -->
+        <header>
+            <h1>Arieza Aziera</h1>
+        </header>
+
+        <!-- Bar navigation -->
+        <aside>
+            <nav>
+                <!-- Toggle button for mobile navigation -->
+                <div class="toggle-bar" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Logo linking to the home page -->
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                </div>
+                <!-- Navigation links -->
+                <div class="navigation-bar">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="skills.html">Skills</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main content sections -->
+        <section>
+            <!-- Section for the main introduction -->
+            <article>
+                <div id="main">
+                    <!-- Main profile image and introduction text -->
+                    <p></p>
+                    <img src="img/main_profile.png" alt="my beautiful picture" height="300" id="main-profile" width="300">
+                    <p id="main-Hi">Hi, its me </p>
+                    <p id="me-A">ARIEZA AZIERA</p>
+                    <p>I'm Nur Arieza Aziera Izzaty, an ISTP personality—thorough, logical, and creatively inclined. 
+                        I find solace in books, expanding my intellectual horizons. Approachable and analytical, 
+                        I tackle challenges with calm assurance. Embodying a well-rounded spirit, I value knowledge, 
+                        personal growth, and meaningful connections on my journey of self-discovery.</p>
+                    <!-- Button to navigate to the portfolio -->
+                    <a href="portfolio.html" class="btn-main">
+                        See my work<span> <img src="img/arrow-right.svg" alt="arrow"></span>
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Section for personal information -->
+        <section>
+            <article>
+                <header>
+                    <h2>About Me</h2>
+                </header>
+                <div id="main">
+                    <!-- Profile image and personal information -->
+                    <p></p>
+                    <img src="img/arieza_selfie.jpg" alt="my beautiful picture" height="300" id="profile" width="300">
+                    <div id="personal-info">
+                        <p>Personal Info</p>
+                        <!-- Table for personal details -->
+                        <table border="1" width="50%">
+                            <tr>
+                                <th>Name</th>
+                                <td>NUR ARIEZA AZIERA IZZATY BINTI SULAIMAN</td>
+                            </tr>
+                            <tr>
+                                <th>Age</th>
+                                <td>22 years old</td>
+                            </tr>
+                            <tr>
+                                <th>Phone No</th>
+                                <td>016 - 705 1580</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>ariezaaziera@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>Nationality</th>
+                                <td>Malaysian</td>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <td>Johor Bahru, Johor</td>
+                            </tr>
+                            <tr>
+                                <th>Language</th>
+                                <td>Malay, English</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Page footer -->
+        <footer>
+            <hr/>
+            <!-- Social media links -->
+            <div class="social-links-container">
+                <a href="https://www.facebook.com/nurarieza.nurarieza"><img src="img/fb.png" alt="Facebook" class="social-links" id="facebook" height="100" width="100"></a>
+                <a href="https://twitter.com/ferdexzra"><img src="img/twit.png" alt="Twitter" class="social-links" id="twitter" height="100" width="100"></a>
+                <a href="https://instagram.com/ariezaaziera"><img src="img/insta.png" alt="Instagram" class="social-links" id="instagram" height="100" width="100"></a>
+                <a href="https://www.youtube.com/@ariezaaziera244"><img src="img/you.png" alt="Youtube" class="social-links" id="youtube" height="100" width="100"></a>
+            </div>
+            <!-- Copyright information -->
+            <h5>Copyright &copy; Arieza Aziera | 2023</h5>
+        </footer>
+    </div>
+    
+    <!-- jQuery library for JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- JavaScript for toggling navigation menu -->
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.navigation-bar ul');
+            nav.classList.toggle('show');
+        }
+
+        $('.toggle-bar').on('click', function (event) {
+            $('this').toggleClass('open');
+            $('.navigation-bar').slideToggle('200');
+        });
+    </script>
+</body>
+</html>
